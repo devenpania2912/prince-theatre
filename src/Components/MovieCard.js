@@ -17,6 +17,8 @@ const Movie = ({movie, currency}) => {
         highlightCheaper(movie);
     },[currency,movie])
 
+
+    //Highlights cheaper price 
     function highlightCheaper(movie){
         let cheapestIndex=0;
         if(movie.providerList != undefined){
@@ -32,13 +34,7 @@ const Movie = ({movie, currency}) => {
         // cheapest index is the index for cheapest movie     
         if(movie.providerList[cheapestIndex] != undefined){
                if(document.getElementsByClassName(movie.providerList[cheapestIndex].provider.id) != undefined){
-                        //document.getElementsByClassName(movie.providerList[cheapestIndex].provider.name).style.backgroundColor="green";
-                        // let divs= document.getElementsByClassName(movie.providerList[cheapestIndex].provider.id);
-                        // [].slice.call( divs ).forEach(function ( div ) {
-                        //     div.innerHTML ="yes"
-                        // });
                         document.getElementById(movie.providerList[cheapestIndex].provider.id).style.backgroundColor="green";
-          
                     }
               //console.log("green",movie.providerList[cheapestIndex].provider.name,movie.providerList[cheapestIndex].provider);
         
@@ -69,18 +65,17 @@ const Movie = ({movie, currency}) => {
                     let basePrice= movie.providerList[i].provider.price;  
                     basePrice*= 0.67; //now baseprice is in Euros because API's base price is Euros
                     let multiplier = rates[currency];
-                    //console.log(multiplier,currency);
-                    basePrice*=multiplier; //final price
+                    basePrice*=multiplier; //final price that needs to be shown 
                    
-                    // if(true){
-                    //      console.log("Changing",movie.providerList[i].provider.price);
-                    // setTimeout(()=>{
-                    //     let divs= document.getElementsByClassName(movie.providerList[i].provider.name);
-                    //     [].slice.call( divs ).forEach(function ( div ) {
-                    //         div.innerHTML =movie.providerList[i].provider.price;
-                    //     });
-                    // },200)
-                    // }
+                    if(currency!=="AUD"){
+                         console.log("Changing",movie.providerList[i].provider.price);
+                        let div= document.getElementById(movie.providerList[i].provider.id);
+                        div.innerHTML =basePrice.toFixed(2);
+                    }
+                    if(currency=="AUD"){
+                        let div= document.getElementById(movie.providerList[i].provider.id);
+                        div.innerHTML =movie.providerList[i].provider.price;
+                    }
                     // else{
                     //     console.log("OG Price",movie);
                     //     let divs= document.getElementsByClassName(movie.providerList[i].provider.name);
