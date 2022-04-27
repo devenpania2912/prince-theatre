@@ -1,6 +1,5 @@
-import Theatre from './Components/Theatre';
 import './App.css';
-import Service from './Components/Services';
+import Service from './Components/Service';
 
 function App() {
   return (
