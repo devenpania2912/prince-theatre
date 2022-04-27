@@ -6,7 +6,7 @@ it("Renders Without Crashing",()=>{
     const div=document.createElement("div");
     let provider={
         'id':'123',
-        'name':'Netflix',
+        'name': 'Netflix',
         'price': '20'
     }
 
@@ -14,7 +14,7 @@ it("Renders Without Crashing",()=>{
         'id':'1234',
         'poster':'',
         'title':'MOVIE',
-        'providerList':[provider]
+        'providerList':[]
     }
     ReactDOM.render(<MovieCard movie={sampleMovie}/>,div)
 })

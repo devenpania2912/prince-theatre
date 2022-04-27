@@ -29,7 +29,7 @@ const Theatre = ({movieList}) => {
         }
         
         updateMovies(tempList);
-        console.log("Final List",movies);
+        //console.log("Final List",movies);
 
     },[movieList])
 

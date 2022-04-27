@@ -1,3 +1,38 @@
+A little overview of the project:
+
+The project pulls some info from the API and displays it on screen, with a little bit of beautification.
+
+The API is a bit unstable -> When there is an error, the code sets the flag to 1 which tells the program that it needs to retry
+
+Choosing currency -> There is a dropdown list on the top right hand corner which lets you select the currency and converts the values into the chosen currency, without delay. The default is, for obvious reasons AUD.
+
+Mobile view -> The frontend is optimised for mobile view as well.
+
+The code consumes the API, which gives us 2 arrays that need to be merged into one to make sure we have an object which has all details of a movie with provider info such as provider name and their price.
+
+The code uses three custom classes to consume the API:
+1. MovieListClass -> array of movies consumed through the API
+2. MovieClass -> Object containing info about that particular movie, along with a providerClass array
+3. ProviderClass -> Object in every movieClass which gives us the provider's id, name and price (Needed for highlighting the cheapest movie, and also to some extent for converting currency)
+
+The code also has a few console logs used during build, and a few comments around every function explaining why its needed and what it does
+
+Once the API is fully consumed by the wrapper(Service) it is then passed to Theatre which renders the Theatre and cleans up the list before passing it on. The list is passed on to the component MovieCard, one movie at a time. (along with the currency selected)
+
+MovieCard is the component which displays the movies -> poster, title, price (for all providers)
+
+MovieCard looks for the cheapest price from the providerList array and highlights it in green, and also converts the price to the selected currency.
+
+How is the price converterd? 
+The component movieCard also consumes another API which gives us the real-time rates for converting currencies, if the user selects AUD, price is shown as it is, but in case a different currency is chosen, the component does the magic and converts the prices to the chosen currency. (The API's base currency is EUR, hence the function converts prices to EUR and then to final price that is to be displayed.)
+
+Check out the currency exchange rates API used: https://api.exchangerate.host/latest
+
+There is a lot of commented out code that can be found inside, but thats kept there deliberately for understanding the thought process behind building each function/ component / service etc.
+
+Q: How to run the project? 
+A: Can be found below, but its pretty simple, 'npm start' is all it needs. Make sure you have installed all the dependencies.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
