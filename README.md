@@ -2,13 +2,13 @@ A little overview of the project:
 
 The project pulls some info from the API and displays it on screen, with a little bit of beautification.
 
-The API is a bit unstable -> When there is an error, the code sets the flag to 1 which tells the program that it needs to retry
+The API is a bit unstable -> When there is an error, the code sets the flag to 1 (each provider has a seperate flag which tells the program which API to retry) which tells the program that it needs to retry.
 
 Choosing currency -> There is a dropdown list on the top right hand corner which lets you select the currency and converts the values into the chosen currency, without delay. The default is, for obvious reasons AUD.
 
-Mobile view -> The frontend is optimised for mobile view as well.
+Mobile view -> The frontend is optimised for mobile view as well (Made in accordance to the wireframe provided - Notice "Classic Movie List" not showing in desktop view and visible in mobile view)
 
-The code consumes the API, which gives us 2 arrays that need to be merged into one to make sure we have an object which has all details of a movie with provider info such as provider name and their price.
+The code consumes the API, which gives us 2 arrays - one each for each movie provider, that need to be merged into one to make sure we have objects containing all details of a movie along with provider info such as provider name and their price.
 
 The code uses three custom classes to consume the API:
 1. MovieListClass -> array of movies consumed through the API
@@ -30,8 +30,9 @@ Check out the currency exchange rates API used: https://api.exchangerate.host/la
 
 There is a lot of commented out code that can be found inside, but thats kept there deliberately for understanding the thought process behind building each function/ component / service etc.
 
-Q: How to run the project? 
-A: Can be found below, but its pretty simple, 'npm start' is all it needs. Make sure you have installed all the dependencies.
+Commit history -> This project was started in a different repo (public link: https://github.com/devenpania2912/Movie-Theatre/tree/development) and then shifted to the current repo, as it was easier to create a new repo with the gitignore file in it before commit. The previous commit history can be viewed by following the link above. (prev commits didn't include gitignore file and hence have the system files as well)
+
+Run the project->'npm start' is all it needs. Make sure you have installed all the dependencies.
 
 # Getting Started with Create React App
 

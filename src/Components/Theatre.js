@@ -76,6 +76,7 @@ const Theatre = ({movieList}) => {
                 <div className='heading'>Prince's Theatre</div>
                 <div className='subheading'>Classic Movies At Home</div>
                 <div className='text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</div>
+                <div className='subheading2'>Classic Movie List</div>
             </div>
 
             {/* Movie Cards */}

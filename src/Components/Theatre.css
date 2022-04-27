@@ -37,10 +37,15 @@
     margin-bottom: 20px;
 }
 
-.subheading{
+.subheading, .subheading2{
     font-size: 1.625rem;
     font-weight: 500;
     margin-bottom: 20px;
+}
+
+.subheading2{
+    margin-top: 20px;
+    display: none;
 }
 
 .currency-selector-wrapper{
@@ -75,7 +80,11 @@
 
     .wrapper{
         margin-left: 40px;
-        margin-right: 40px;text-align: left;
+        margin-right: 40px;
+    }
+
+    .subheading2{
+        display: block;
     }
 
 }
