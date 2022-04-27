@@ -1,0 +1,28 @@
+.movieCard{
+    background-color: rgb(96, 0, 0);
+    margin: 10px;
+    border-radius: 2%;
+    padding: 5px;
+    min-width: 100px;
+    max-width: 200px;
+}
+
+.movieCard > img{
+    max-width: 100%;
+}
+
+.title{
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.price{
+    font-size: 0.6rem;
+    text-transform: uppercase;
+}
+
+.fw, .cw{
+    display: inline-block;
+}
+

@@ -1,0 +1,85 @@
+*{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.page{
+    width: 100%;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('./theatre_background.png');
+    
+}
+
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 100px;
+}
+
+.movie-card-wrapper{
+    display: flex;
+    margin-top: 50px;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+.heading{
+    font-size: 3.125rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.subheading{
+    font-size: 1.625rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.currency-selector-wrapper{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    
+}
+.currency-selector{
+    width: 100px;
+    background-color: black;
+}
+
+.currency-label{
+    font-size: 0.7rem;
+}
+
+.logo>img{
+    width: 125px;
+    position: absolute;
+    z-index: 5;
+    height: 50px;
+    top: 20px;
+    left: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .movie-card-wrapper{
+        flex-direction: row ;
+    }
+
+    .wrapper{
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-top: 50px;
+    }
+
+}
