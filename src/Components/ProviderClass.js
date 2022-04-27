@@ -3,9 +3,10 @@ export default class Provider{ //adds provider object
         this.provider={}
     }
     
-    addProvider(provider,price){
+    addProvider(id,provider,price){
         this.provider.name = provider;
         this.provider.price = price;
+        this.provider.id=id;
     }
     
 }

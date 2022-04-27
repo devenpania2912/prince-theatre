@@ -20,6 +20,7 @@
 .price{
     font-size: 0.6rem;
     text-transform: uppercase;
+    display: inline;
 }
 
 .fw, .cw{

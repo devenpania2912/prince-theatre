@@ -12,7 +12,7 @@ export default class Movie{
         let movieId= movie.ID.substring(2);
         let provider= movie.ID.substring(0,2);
 
-        providerToBeAdded.addProvider(provider, movie.Price);
+        providerToBeAdded.addProvider(movie.ID, provider, movie.Price);
 
         this.movie={
             "id":movieId,

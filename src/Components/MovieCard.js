@@ -20,6 +20,7 @@ const Movie = ({movie, currency}) => {
     function highlightCheaper(movie){
         let cheapestIndex=0;
         if(movie.providerList != undefined){
+            if(movie.providerList.length > 1){
             let cheapest= movie.providerList[0].provider.price;
             for(let i=0; i< movie.providerList.length ; i++){
                 if(movie.providerList[i].provider.price < cheapest){
@@ -30,18 +31,19 @@ const Movie = ({movie, currency}) => {
 
         // cheapest index is the index for cheapest movie     
         if(movie.providerList[cheapestIndex] != undefined){
-               // if(document.getElementsByClassName(movie.providerList[cheapestIndex].provider.name) != undefined){
-                    //     document.getElementsByClassName(movie.providerList[cheapestIndex].provider.name).style.backgroundColor="green";
-                    // let divs= document.getElementsByClassName(movie.providerList[cheapestIndex].provider.name);
-                    //     [].slice.call( divs ).forEach(function ( div ) {
-                    //         div.innerHTML ="yes"
-                    //     });
+               if(document.getElementsByClassName(movie.providerList[cheapestIndex].provider.id) != undefined){
+                        //document.getElementsByClassName(movie.providerList[cheapestIndex].provider.name).style.backgroundColor="green";
+                        // let divs= document.getElementsByClassName(movie.providerList[cheapestIndex].provider.id);
+                        // [].slice.call( divs ).forEach(function ( div ) {
+                        //     div.innerHTML ="yes"
+                        // });
+                        document.getElementById(movie.providerList[cheapestIndex].provider.id).style.backgroundColor="green";
           
-                    // }
-              //console.log("green",movie.providerList[cheapestIndex].provider.name,movie.providerList[cheapestIndex].provider.name);
+                    }
+              //console.log("green",movie.providerList[cheapestIndex].provider.name,movie.providerList[cheapestIndex].provider);
         
+            }
         }
-        
         }
         
     }
@@ -128,7 +130,7 @@ const Movie = ({movie, currency}) => {
           <div className='title'>{movie.title}</div>
           <div className='price'>
             {movie.providerList.map((provider)=>
-            <div key={provider.provider.name} >{provider.provider.name}: {currentCurrency} <div className={provider.provider.name}>{provider.provider.price}</div></div>
+            <div key={provider.provider.name} >{provider.provider.name}: {currentCurrency} <div id={provider.provider.id} className="price">{provider.provider.price}</div></div>
             )}
           </div>
         </div>
