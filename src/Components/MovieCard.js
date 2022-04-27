@@ -44,7 +44,8 @@ const Movie = ({movie, currency}) => {
         
     }
 
-    async function currencyMultiplier(currency,movie){
+    //Function used to convert the price to right currency
+    async function currencyMultiplier(currency,movie){ 
 
         let api="https://api.exchangerate.host/latest";
         let rates={}
@@ -68,7 +69,7 @@ const Movie = ({movie, currency}) => {
                     basePrice*=multiplier; //final price that needs to be shown 
                    
                     if(currency!=="AUD"){
-                         console.log("Changing",movie.providerList[i].provider.price);
+                         //console.log("Changing",movie.providerList[i].provider.price);
                         let div= document.getElementById(movie.providerList[i].provider.id);
                         div.innerHTML =basePrice.toFixed(2);
                     }
@@ -125,7 +126,7 @@ const Movie = ({movie, currency}) => {
           <div className='title'>{movie.title}</div>
           <div className='price'>
             {movie.providerList.map((provider)=>
-            <div key={provider.provider.name} >{provider.provider.name}: {currentCurrency} <div id={provider.provider.id} className="price">{provider.provider.price}</div></div>
+            <div key={provider.provider.id} >{provider.provider.name}: {currentCurrency} <div id={provider.provider.id} className="price">{provider.provider.price}</div></div>
             )}
           </div>
         </div>

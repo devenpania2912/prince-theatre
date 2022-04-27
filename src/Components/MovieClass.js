@@ -5,6 +5,7 @@ export default class Movie{
         this.movie={}
     }
     
+    //adds a movie in the correct format to the movieList array
     addMovie(movie){
         
         let providerToBeAdded= new Provider();

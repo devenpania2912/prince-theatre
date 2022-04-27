@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches Snapshot 1`] = `
+<div
+  className="movieCard"
+>
+  <img
+    className="poster"
+    src=""
+  />
+  <div
+    className="title"
+  >
+    MOVIE
+  </div>
+  <div
+    className="price"
+  >
+    <div>
+      Netflix
+      : 
+       
+      <div
+        className="price"
+        id="123"
+      >
+        20
+      </div>
+    </div>
+  </div>
+</div>
+`;

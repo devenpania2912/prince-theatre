@@ -1,3 +1,5 @@
+//this component makes sure that the information is correctly consumed from the API and passed on to the child component 
+
 import {useState,useEffect} from 'react';
 import axios from 'axios';
 import Theatre from './Theatre';
